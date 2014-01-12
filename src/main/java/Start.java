@@ -24,7 +24,7 @@ public class Start {
 	public static void main(String[] args) throws Exception {
 		String webPort = System.getenv("PORT");
 		if (webPort == null || webPort.isEmpty()) {
-			webPort = "8080";
+			webPort = "80";
 		}
 		String webappDirLocation = "src/main/webapp/";
 

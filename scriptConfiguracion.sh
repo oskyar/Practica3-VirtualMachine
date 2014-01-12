@@ -9,11 +9,11 @@ cd
 echo "[Descargando jdk 7u45]"
 wget https://dl.dropboxusercontent.com/u/3216105/jdk-7u45-linux-x64.tar.gz
 echo "[Descomprimiendo jdk]"
-tar -xf jdk-7u45-linux-x64.tar.gz
+sudo tar -xvf jdk-7u45-linux-x64.tar.gz
 echo "[Creando directorio para el jdk]"
 sudo mkdir -p /usr/lib/jvm/jdk1.7.0
 echo "[Moviendo jdk a /usr/lib/jvm/]"
-sudo mv jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
+sudo cp -r jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
 
 echo "[Configurando alternativas]"
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0/bin/java" 1
@@ -27,7 +27,7 @@ echo "[Comprobación de que la configuración es correcta]"
 java -version
 
 echo "[Borrando carpeta de java]"
-rmdir jdk1.7.0_45
+sudo rm -r jdk1.7.0_45/
 
 echo " ----------------------------------"
 echo " ----------------------------------"
@@ -50,14 +50,10 @@ echo "[Borrando carpeta de apache-maven-3]"
 sudo rm -r apache-maven-3.1.1
 
 echo "[Configurando variables de ENTORNO]"
-export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1 
-echo $M2_HOME
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
 export M2=$M2_HOME/bin
-echo $M2
 export MAVEN_OPTS="-Xms256m -Xmx512m"
-echo $MAVEN_OPTS
 export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
-echo $JAVA_HOME
 export PATH=$JAVA_HOME/bin:$M2:$PATH_BACKUP
 
 
