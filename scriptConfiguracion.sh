@@ -7,7 +7,7 @@ echo " -------Instalación JDK -----------"
 echo "Yendo al directorio home"
 cd
 echo "Descargando jdk 7u45"
-wget http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz
+wget http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-i586.tar.gz
 echo "Descomprimiendo jdk"
 tar -xvf jdk-7u45-linux-x64.tar.gz
 echo "Creando directorio para el jdk"
