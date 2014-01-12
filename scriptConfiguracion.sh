@@ -9,7 +9,7 @@ cd
 echo "[Descargando jdk 7u45]"
 wget https://dl.dropboxusercontent.com/u/3216105/jdk-7u45-linux-x64.tar.gz
 echo "[Descomprimiendo jdk]"
-tar -xf jdk-7u45-linux-i586.tar.gz
+tar -xf jdk-7u45-linux-x64.tar.gz
 echo "[Creando directorio para el jdk]"
 sudo mkdir -p /usr/lib/jvm/jdk1.7.0
 echo "[Moviendo jdk a /usr/lib/jvm/]"
