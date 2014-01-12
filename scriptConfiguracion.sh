@@ -35,13 +35,13 @@ echo "Descargando Maven 3"
 wget http://ftp.cixug.es/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
 
 echo "Creamos el directorio para maven"
-mkdir -p /usr/local/apache-maven
+sudo mkdir -p /usr/local/apache-maven
 
 echo "Descomprimiendo Maven 3.1.1"
 tar -xvf apache-maven-3.1.1-bin.tar.gz
 
 echo "Copiando contenido al directorio de maven"
-cp -r apache-maven-3.1.1 /usr/local/apache-maven/
+sudo cp -r apache-maven-3.1.1 /usr/local/apache-maven/
 
 echo "Configurando variables de ENTORNO"
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1 
