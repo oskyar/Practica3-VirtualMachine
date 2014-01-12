@@ -1,0 +1,91 @@
+<!--
+  Esta archivo pertenece a la aplicación "Estadísticas de objetivos" bajo licencia GPLv2.
+  Copyright (C) 2013 Óscar R. Zafra Megías.
+
+  Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos 
+  de la Licencia Pública General de GNU según es publicada por la Free Software Foundation, 
+  bien de la versión 2 de dicha Licencia o bien (según su elección) de cualquier versión 
+  posterior.
+
+  Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, 
+  incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN 
+  PROPÓSITO PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
+
+  Debería haber recibido una copia de la Licencia Pública General junto con este programa. 
+  Si no ha sido así, escriba a la Free Software Foundation, Inc., en 675 Mass Ave, Cambridge, 
+  MA 02139, EEUU.
+-->
+
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Practica2 - Jaula con CHROOT</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"
+	title="Stylesheet" />
+<link rel="stylesheet" href="miEstilo.css" type="text/css"
+	media="screen" title="Stylesheet" />
+<link rel="stylesheet"
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="cuerpo">
+		<div class="container">
+			<div class="titulo">Adivina adivinanza...</div>
+			<div class="descripcion">La aplicaci&oacute;n trata sobre
+				contestar la pregunta que se propone de manera muy sencilla, siempre
+				con letras en min&uacute;scula, sin tildes y sin faltas de
+				ortograf&iacute;a (jejeje...).</div>
+
+			<br> <br>
+			<h3>&iquest;Cu&aacute;nto sabes de Infraestructuras Virtuales?</h3>
+			<br> <br>
+			<form wicket:id="form">
+				<div class="pregunta">
+					<strong>Pregunta:</strong> <span wicket:id="pregunta"> </span>
+				</div>
+				<input class="form-control boton" style="clear: left; width: 200px"
+					type="text" wicket:id="respuesta" />
+				<button type="submit" class="btn btn-primary boton"
+					wicket:id="evaluar">
+					<span class="glyphicon glyphicon-search"></span> Evaluar
+				</button>
+			</form>
+			<div class="fb" wicket:id="feedback"></div>
+			<br />
+			<br />
+			<br />
+			<hr style="border: 2px; border-style: dashed;">
+
+			<div class="titulo">&iquest;Porcentaje completado?...</div>
+			<div class="descripcion">Esta segunda parte trata de coger tu
+				archivo de objetivos dentro del meta del repositorio del profesor y
+				calcular el porcentaje total completado.</div>
+			<br> <span style="color: red; font-weight: bold;"> OJO:
+				Lo calcula seg&uacute;n los objetivos a&ntilde;adidos a tu archivo de objetivos.</span> <br><br>
+			<form wicket:id="formPorcentaje">
+				<strong>Pon la URL </strong>(Ejemplo: https://github.com/IV-GII/GII-2013/blob/master/meta/miArchivo.md): <input class="form-control boton"
+					type="text" wicket:id="urlObjetivos" />
+				<button type="submit" class="btn btn-primary boton"
+					wicket:id="calcularPorcentaje" style="float:right">
+					<span class="glyphicon glyphicon-search"></span> Calcular
+					Porcentaje
+				</button>
+			</form>
+			<br />
+			<div class="fb"> Objetivos completados: <span wicket:id="objCumplidos"></span></div>
+			<div class="fb"> Objetivos NO completados: <span wicket:id="objNoCumplidos">5</span></div>
+			<div class="fb" style="clear:left; float:left" wicket:id="feedbackObjetivos"></div>
+
+		</div>
+		<div class="footer">
+			Imagen cogida de <a
+				href="http://www.crefal.edu.mx/crefal2013/images/stories/novedades/2011_08_29_infraestructura_campus_crefal2.jpg">
+				aquí</a> | Práctica realizada por <a href="https://github.com/oskyar">
+				Óscar Zafra </a> | 2013.
+		</div>
+	</div>
+</body>
+</html>
