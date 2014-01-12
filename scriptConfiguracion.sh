@@ -9,7 +9,7 @@ cd
 echo "Descargando jdk 7u45"
 wget http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-i586.tar.gz
 echo "Descomprimiendo jdk"
-tar -xvf jdk-7u45-linux-x64.tar.gz
+tar -xvf jdk-7u45-linux-i586.tar.gz
 echo "Creando directorio para el jdk"
 sudo mkdir -p /usr/lib/jvm/jdk1.7.0
 echo "Moviendo jdk a /usr/lib/jvm/"
