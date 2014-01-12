@@ -14,10 +14,33 @@
 	Si no ha sido así, escriba a la Free Software Foundation, Inc., en 675 Mass Ave, Cambridge, 
 	MA 02139, EEUU.
 
-# Práctica 3: Aislamiento de una aplicación web usando jaulas
+# Práctica 3: Diseño de máquinas virtuales
 
-> Ìnformación gratuita:
-> Instalar todo con permisos de superusuario para que no haya problemas.
+### Descripción
+
+La práctica consiste en diseñar una máquina virtual para una aplicación específica la cual debe de usar los mínimos recursos del sistema para que la aplicación sea lo más óptima posible, es decir, que los recursos no se queden cortos ni que tampoco se "desperdicien".
+
+Para ello voy a usar nueva práctica, la nube, en este caso, Windows Azure.
+Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
+* Ubuntu 12.04 LTS
+* Ubuntu 13.10
+* Centos 
+
+Pasos a seguir:
+
+1. Primero crearemos las máquinas virtuales en Azure.
+2. Entraremos a la máquina mediante ssh.
+3. Configuraremos el entorno para correr la aplicación (Instalación de jdk 1.7, maven, git).
+4. Haremos pruebas de uso de recursos e iremos cambiando la configuración del sistema mediante el panel de control de Azure.
+
+
+
+### Máquina virtual 1. Ubuntu 12.04 LTS
+
+1. Empezaremos creando la máquina virtual desde la página de Azure ya que es más atractivo.
+
+	Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
+	
 
 ### INSTALAR SIENDO SUPERUSUARIO DEL SISTEMA (Fuera de la jaula)
 
