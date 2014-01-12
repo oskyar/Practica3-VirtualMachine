@@ -26,6 +26,9 @@ sudo update-alternatives --config java
 echo "Comprobación de que la configuración es correcta"
 java -version
 
+echo "Borrando carpeta de java"
+rmdir jdk1.7.0_45
+
 echo " ----------------------------------"
 echo " ----------------------------------"
 
@@ -42,6 +45,9 @@ tar -xvf apache-maven-3.1.1-bin.tar.gz
 
 echo "Copiando contenido al directorio de maven"
 sudo cp -r apache-maven-3.1.1 /usr/local/apache-maven/
+
+echo "Borrando carpeta de apache-maven-3"
+sudo rm -r apache-maven-3.1.1
 
 echo "Configurando variables de ENTORNO"
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1 
@@ -69,3 +75,6 @@ wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.0.Final/jboss-as-7.1.0.F
 
 echo "Descomprimiendo"
 tar -xvf jboss-as-7.1.0.Final.tar.gz
+
+echo "Borrando todos los *.tar.gz"
+rm *.tar.gz
