@@ -1,5 +1,5 @@
-	Esta archivo pertenece a la aplicación "Estadísticas de Objetivos + AdivinaAdivinanza" bajo licencia GPLv2.
-	Copyright (C) 2013 Óscar R. Zafra Megías.
+	Esta archivo pertenece a la aplicación "Estadísticas de Objetivos + AdivinaAdivinanza bajo una VM en Azure" bajo licencia GPLv2.
+	Copyright (C) 2014 Óscar R. Zafra Megías.
 	
 	Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos 
 	de la Licencia Pública General de GNU según es publicada por la Free Software Foundation, 
@@ -14,7 +14,7 @@
 	Si no ha sido así, escriba a la Free Software Foundation, Inc., en 675 Mass Ave, Cambridge, 
 	MA 02139, EEUU.
 
-# Práctica 2: Aislamiento de una aplicación web usando jaulas
+# Práctica 3: Aislamiento de una aplicación web usando jaulas
 
 > Ìnformación gratuita:
 > Instalar todo con permisos de superusuario para que no haya problemas.
