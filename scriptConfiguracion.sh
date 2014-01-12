@@ -62,7 +62,7 @@ export PATH=$JAVA_HOME/bin:$M2:$PATH_BACKUP
 
 
 echo "Comprobación de que la configuración es correcta"
-maven --version
+mvn --version
 
 
 echo " -------------------------------------"
