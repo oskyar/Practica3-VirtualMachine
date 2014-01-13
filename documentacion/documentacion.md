@@ -159,7 +159,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	[Código del script](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/scriptConfiguracion.sh)
 
-	*El script me descarga, instala y configura.
+	* El script me descarga, instala y configura.
 
 		*JDK 1.7.0_45
 
@@ -244,7 +244,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 		2. Pinchamos en el nombre de la VM que queramos cambiar de configuración/recursos y una vez dentro le damos a la opción `configure`.
 
-		![Cambiando recursos](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/10.CambiandoRecursos.png)
+			![Cambiando recursos](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/10.CambiandoRecursos.png)
 
 		3. Vemos que hay muchos tamaños de VM, pero con la suscripción solo podemos optar por los 3 primeros,
 
