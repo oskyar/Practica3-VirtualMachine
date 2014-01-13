@@ -222,13 +222,74 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 
 
+12. Me he adelantado poniendo los resultados, pero ahora mismo explico qué orden he usado y cómo he cambiado la configuración de las VMs.
+
+	* La orden es la siguiente
+
+			$ ab -n 1000 -c 100 app-conf3.cloudapp.net/
+
+		~~~
+		-n: Indica el número de peticiones que se harán (1000)
+		-c: Cuántas peticiones se harán concurrentemente (100)
+		~~~
+
+	* **¿Cómo se cambia la configuración de nuestra VM?**
+
+		1. Para hacerlo más intuitivo y menos tedioso, lo haremos desde el panel de administración en la web.
+
+			Accedemos a Virtual Machines una vez dentro.
+
+			![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
+
+
+		2. Pinchamos en el nombre de la VM que queramos cambiar de configuración/recursos y una vez dentro le damos a la opción `configure`.
+
+		![Cambiando recursos](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/10.CambiandoRecursos.png)
+
+		3. Vemos que hay muchos tamaños de VM, pero con la suscripción solo podemos optar por los 3 primeros,
+
+			*Extra small *(1 core compartido y 768 MB de RAM)*
+
+			*Small *(1 Core y 1,75 GB de RAM)*
+
+			*Medium *(2 Cores y 3,5 GB de RAM)*
+
+		4. Si lo modificamos veremos que abajo, a pie de página nos aparecen dos iconos **SAVE** y **DISCARD**, pues, si queremos guardar esa configuración le daremos a **SAVE** y si no, lo descartaremos (DISCARD).
+
+			* Si le damos a SAVE, nos mostrará otro mensaje emergente a pie de página en el que nos indica que la VM se reiniciará. Si no tenemos nada que perder le daremos a `OK`.
+
+		5. Una vez cambiada la configuración se procede a pasar el benchmark de nuevo. Así sucesivamente con todas las máquinas virtuales desde 1 core compartido hasta 2 cores.
+
+
+#### Comparaciones gráficas de las configuraciones.
+
+![Comparación 1, Tiempo Test](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/g1.TiempoPorTest.png)
+
+![Comparación 2, Solicitud por Segundo](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/g2.SolicitudPorSegundo.png)
+
+![Comparación 3, Tiempo por Solicitud](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/g3.TiempoPorSolicitud.png)
+
+![Comparación 4, Velocidad de Transferencia](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/g4.VelocidadDeTransferencia.png)
+
+![TODOS JUNTOS](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/g5.TodosJuntos.png)
+
+
+
 ##Conclusión:
+
+En vista de la información que nos ofrece el benchmark `ab`, podemos observar que para una aplicación realizada en el lenguaje de programación **JAVA** y con un servidor de aplicaciones como **SPRING** sin Base de datos, la VM con mejor rendimiento ha sido **Ubuntu 13.10 con 1 core y 1,75 GB de RAM**. No le he realizado ninguna prueba de estrés, puesto que siendo realista, esta aplicación a lo sumo tendría 30-40 solicitudes en horas puntas si los alumnos la utilizaran para saber cuánto saben de la asignatura de "Infraestructuras Virtuales". 
+
+A la vista está también, que con menos recursos, CentOS con 1 core compartido y 768 MB de RAM está muy muy cerca del rendimiento de Ubuntu 13.10 con 1 Core y 1,75 GB de RAM.
+
+Dado que tienen prácticamente el mismo rendimiento y que en IaaS como Azure se paga por minutos y por recursos contratados, para mi aplicación bastaría con CentOS (ExtraSmall) y quizá se podría añadir en la misma VM una Base de Datos y seguiría estando igual de optimizado.
 
 
 
 ##ENLACES:
 
-[APP en Heroku](http://estadisticasobjetivos-iv.herokuapp.com/)
+[(ACTIVA) VM 1 - Ubuntu 13.10 - 1 Core - 1,75 GB RAM](http://app-conf2.cloudapp.net)
+
+[(ACTIVA) VM 2 - CentOS - 1 Core Compartido - 768 MB RAM](http://app-conf3.cloudapp.net)
 
 [Documentación](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/documentacion.md)
 
