@@ -292,19 +292,17 @@ Dado que tienen prácticamente el mismo rendimiento y que en IaaS como Azure se 
 
 [(ACTIVA) VM 2 - CentOS - 1 Core Compartido - 768 MB RAM](http://app-conf3.cloudapp.net)
 
-[Documentación](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/documentacion.md)
+[Documentación](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/documentacion/documentacion.md)
 
 [Issiue](https://github.com/IV-GII/GII-2013/issues/58)
 
-[Repositorio](https://github.com/oskyar/Practica2-Jaula-CHROOT)
+[Repositorio](https://github.com/oskyar/Practica3-VirtualMachine)
 
 
 ##BIBLIOGRAFIA
 
-http://askubuntu.com/questions/53177/bash-script-to-set-environment-variables-not-working
+http://jj.github.io/IV/documentos/temas/Almacenamiento#a_dnde_ir_desde_aqu
 
-https://forum.linode.com/viewtopic.php?t=4409%3E
+http://jj.github.io/IV/documentos/temas/Uso_de_sistemas
 
-http://www.debian-administration.org/article/OpenSSH_SFTP_chroot_with_ChrootDirectory
-
-http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-6-7-jre-or-jdk
+https://manage.windowsazure.com

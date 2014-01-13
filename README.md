@@ -1,6 +1,6 @@
-Practica1-PaaS
+Practica3 - Diseño de máquinas virtuales
 ==============
 
-Esta es mi primera práctica en la Asignatura Infraestructuras Virtuales del Grado de Ingeniería Informática.
+Para ver la documentación:, [pincha aquí](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/documentacion/documentacion.md)
 
-Trata sobre adivinar...
+Para ver el código, [pincha aquí](https://github.com/oskyar/Practica3-VirtualMachine)
