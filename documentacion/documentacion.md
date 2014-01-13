@@ -43,7 +43,7 @@ Pasos a seguir:
 
 #####1. Empezaremos creando la máquina virtual desde la página de Azure ya que es más atractivo e intuitivo.
 
-	1. Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
+1. Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
 
 	![Captura de la página inicial](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/1-CreandoMaquinaVirtualEnAzure.png)
 
