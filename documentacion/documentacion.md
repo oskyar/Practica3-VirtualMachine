@@ -47,61 +47,62 @@ Pasos a seguir:
 
 	![Captura de la página inicial](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/1-CreandoMaquinaVirtualEnAzure.png)
 
-	2. Ahora accedemos a crear la VM (Virtual Machine de ahora en adelante) desde la Galería (`**FROM GALERY**`) que es más cómodo y fácil.
+2. Ahora accedemos a crear la VM (Virtual Machine de ahora en adelante) desde la Galería (`**FROM GALERY**`) que es más cómodo y fácil.
 	**NOTA:** También que al tener una cuenta de suscripción gratuita solo podemos crear un almacenamiento de objetos, por lo que nos conviene hacerlo desde la galería porque nos permite usar el mismo almacenamiento en caso de haber creado alguno ya.
 
 	![Accediendo a la galería](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/2.CreandoDesdeGaleria.png)
 
-	3. En este paso es donde escogemos el Sistema Operativo que queramos tener en nuestra máquina virtual, en este caso escogeré Ubuntu -> Ubuntu 12.04 LTS (La captura es puramente ilustrativa).
+3. En este paso es donde escogemos el Sistema Operativo que queramos tener en nuestra máquina virtual, en este caso escogeré Ubuntu -> Ubuntu 12.04 LTS (La captura es puramente ilustrativa).
 
 	![Escogiendo SO](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/3.EscogiendoSO.png)
 
-	4. Ahora procedemos a rellenar los que se nos pide:
+4. Ahora procedemos a rellenar los que se nos pide:
 
 	![Escogiendo SO](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/4.RellenandoDatos.png)
 		
-		1. Ponerle nombre a nuestra máquina virtual (formará parte de la URL de acceso)
+	1. Ponerle nombre a nuestra máquina virtual (formará parte de la URL de acceso)
 
-		2. **SIZE:** Configuración que tendrá nuestra máquina, en nuestro caso solo podremos escoger o la *Extra small* ó *Small* debido a la suscripción. Empezaremos por la Extra small que tiene:
+	2. **SIZE:** Configuración que tendrá nuestra máquina, en nuestro caso solo podremos escoger o la *Extra small* ó *Small* debido a la suscripción. Empezaremos por la Extra small que tiene:
 
-			* Un core compartido
-			* 768 MB de memoria RAM
+		* Un core compartido
+		* 768 MB de memoria RAM
 
-		3. **NEW USER NAME: ** Viene a ser el nombre de nuestro usuario dentro de la máquina.
+	3. **NEW USER NAME: ** Viene a ser el nombre de nuestro usuario dentro de la máquina.
 
-		4. Os saldrá marcado en *AUTHENTICATION* `Upload compatible ssh key for authentication`, lo desmarcáis en caso de no tener un certificado para ssh.
+	4. Os saldrá marcado en *AUTHENTICATION* `Upload compatible ssh key for authentication`, lo desmarcáis en caso de no tener un certificado para ssh.
 
-		5. Yo proveo de password a mi VM para que no puedan acceder usuarios anónimos o ajenos al sistema, así que la selecciono y establezco una contraseña.
+	5. Yo proveo de password a mi VM para que no puedan acceder usuarios anónimos o ajenos al sistema, así que la selecciono y establezco una contraseña.
 
-		6. ¡Podemos continuar!
-
-
-	5. Ya nos falta poco, sigamos configurando... 
-
-	![Rellenando el formulario](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/4.RellenandoDatos.png)
-		
-		1. **CLOUD SERVICE:** Ahora procedemos a indicar si es un nuevo servicio o lo queremos vincular a uno ya existente (esto sirve por si queremos tener en una VM a parte una Base de Datos, ó un entorno de desarrollo o de testeo), en mi caso crearé uno nuevo.
-
-		2. **CLOUD SERVICE DNS NAME:** En caso de ser un nuevo servicio el nombre estará automáticamente puesto, ya que lo pusimos en el paso anterior.
-
-		3. La región en la que queremos que esté nuestra VM, esto es importante porque dependiendo de qué ubicación queramos escoger, puede que nos puedan juzgar de una manera u otra en caso de hacer travesuras por la red. Por lo tanto en nuestro caso `West Europe`.
-
-		4. **STORAGE ACCOUNT: ** Escogemos nuestro única cuenta de almacenamiento, ya que no podemos utilizar otra ni crear una nueva con la súper suscripción que tenemos, que se agradece mucho aunque sea bastante limitada.
-
-		5. **AVAILABILITY SET: ** Esto es para que sincronices varias máquinas y en caso de que una VM esté muy "estresada" pueda entrar en acción otra máquina secundaria para balancear la carga. ¡¡Todo automáticamente!!.
-
-		6. ¡Sigamos!
+	6. ¡Podemos continuar!
 
 
-	6. Último pasito, configurar los "**Puntos Finales**"
+5. Ya nos falta poco, sigamos configurando... 
 
-	![Puntos Finales](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/6.ConfigurandoPuntosFinales.png)
+![Rellenando el formulario](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/4.RellenandoDatos.png)
+	
+	1. **CLOUD SERVICE:** Ahora procedemos a indicar si es un nuevo servicio o lo queremos vincular a uno ya existente (esto sirve por si queremos tener en una VM a parte una Base de Datos, ó un entorno de desarrollo o de testeo), en mi caso crearé uno nuevo.
 
-	**¿Ésto que quiere decir?** - Que nos abre directamente los puertos a nuestra VM que vayamos a necesitar, ni más ni menos. Teniendo así bien capada nuestra VM en caso de seres intrusivos.
+	2. **CLOUD SERVICE DNS NAME:** En caso de ser un nuevo servicio el nombre estará automáticamente puesto, ya que lo pusimos en el paso anterior.
 
-	Hay gran variedad de "EndPoints" por defecto configurados en el que solo deberemos de pinchar en el que queramos añadir.
+	3. La región en la que queremos que esté nuestra VM, esto es importante porque dependiendo de qué ubicación queramos escoger, puede que nos puedan juzgar de una manera u otra en caso de hacer travesuras por la red. Por lo tanto en nuestro caso `West Europe`.
 
-	7. C'est Fini!
+	4. **STORAGE ACCOUNT: ** Escogemos nuestro única cuenta de almacenamiento, ya que no podemos utilizar otra ni crear una nueva con la súper suscripción que tenemos, que se agradece mucho aunque sea bastante limitada.
+
+	5. **AVAILABILITY SET: ** Esto es para que sincronices varias máquinas y en caso de que una VM esté muy "estresada" pueda entrar en acción otra máquina secundaria para balancear la carga. ¡¡Todo automáticamente!!.
+
+	6. ¡Sigamos!
+
+
+6. Último pasito, configurar los "**Puntos Finales**"
+
+![Puntos Finales](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/6.ConfigurandoPuntosFinales.png)
+
+**¿Ésto que quiere decir?** - Que nos abre directamente los puertos a nuestra VM que vayamos a necesitar, ni más ni menos. Teniendo así bien capada nuestra VM en caso de seres intrusivos.
+
+Hay gran variedad de "EndPoints" por defecto configurados en el que solo deberemos de pinchar en el que queramos añadir.
+
+7. C'est Fini!
+
 
 ######2. ¡¡	Eh, que ya tengo una VM creada !! ¿¡Cómo entro!?
 
