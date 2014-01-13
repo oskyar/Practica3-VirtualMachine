@@ -121,11 +121,11 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	* Si nos sale un mensaje de error que no encuentra el ejecutable, no pasa nada, escribid lo siguiente e instalar las dependencias necesarias.
 
-		$ sudo apt-get install ssh
+			$ sudo apt-get install ssh
 
 2. Para acceder mediante ssh debemos recordar el nombre de nuestra VM ó la ip por lo menos, para ello, sin tener que acceder a la web y tener que estar navegando, utilizaremos la siguiente orden
 
-	$ azure vm list
+		$ azure vm list
 
 	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/8.ListaVM.png)
 
