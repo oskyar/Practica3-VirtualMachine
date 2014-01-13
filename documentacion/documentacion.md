@@ -294,7 +294,7 @@ Dado que tienen prácticamente el mismo rendimiento y que en IaaS como Azure se 
 
 [Documentación](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/documentacion/documentacion.md)
 
-[Issiue](https://github.com/IV-GII/GII-2013/issues/58)
+[Issue](https://github.com/IV-GII/GII-2013/issues/117)
 
 [Repositorio](https://github.com/oskyar/Practica3-VirtualMachine)
 
