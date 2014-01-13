@@ -198,6 +198,29 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	![Proyecto desplegado](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/9.DesplegandoAplicacion.png)
 
+
+10. Comprobemos que está funcionando, [pinchemos aquí](http://app-conf3.cloudapp.net)
+
+
+11. Ya tenemos todo corriendo, ahora solo falta usar un **benchmark** como `ab` para testear la aplicación e intentar sacarle el máximo rendimiento con el mínimo hardware posible.
+	
+	* Cabe recordar que tenemos que hacer comparaciones con el mismo hardware pero diferentes VM instaladas.
+
+	* Las configuraciones son las siguientes (***TODAS EN AZURE***):
+
+		| Configuración | SO 		| Cores 		|	RAM	|
+		| :-----------:	| :------: 	| :-----: 		|:-----:|
+		| 	 1   		| Ubuntu 12.04 LTS       	| 1 compartido	|768 MB 	|
+		| 	 2   		| Ubuntu 13.10     	| 1 compartido	|768 MB	|
+		| 	 3   		| CentOS       	| 1 compartido	|768 MB 	|
+		| 	 4   		| Ubuntu 12.04 LTS     	| 1 			|1,75 GB	|
+		| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|
+		| 	 6   		| CentOS     	| 1 			|1,75 GB	|				
+		| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|
+		| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|
+		| 	 9   		| CentOS       	| 2 			|3,75 GB	|
+
+
 ##Conclusión:
 
 
