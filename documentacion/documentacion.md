@@ -109,7 +109,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 7. C'est Fini!
 
 
-######2. ¡¡Eh, que ya tengo una VM creada!! ¿¡Cómo entro!?
+#####2. ¡¡Eh, que ya tengo una VM creada!! ¿¡Cómo entro!?
 
 * Se puede acceder de muchísimas formas, pero como ya hemos hecho demasiados clicks, toca escribir un poquito y acceder mediante nuestro terminal. Sigamos los siguientes pasos y veremos que sencillo es:
 
@@ -140,19 +140,19 @@ Esta imagen es ilustrativa.
 		$ ssh app-conf3.cloudapp.net
 
 
-~~~
+	~~~
 
-oskyar@oskyar-M60Vp:~/proyectosGit/Practica3-VirtualMachine$ ssh app-conf3.cloudapp.net
-Warning: the ECDSA host key for 'app-conf3.cloudapp.net' differs from the key for the IP address '137.117.146.38'
-Offending key for IP in /home/oskyar/.ssh/known_hosts:14
-Matching host key in /home/oskyar/.ssh/known_hosts:15
-Are you sure you want to continue connecting (yes/no)? yes
-oskyar@app-conf3.cloudapp.net's password: 
-Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
+	oskyar@oskyar-M60Vp:~/proyectosGit/Practica3-VirtualMachine$ ssh app-conf3.cloudapp.net
+	Warning: the ECDSA host key for 'app-conf3.cloudapp.net' differs from the key for the IP address '137.117.146.38'
+	Offending key for IP in /home/oskyar/.ssh/known_hosts:14
+	Matching host key in /home/oskyar/.ssh/known_hosts:15
+	Are you sure you want to continue connecting (yes/no)? yes
+	oskyar@app-conf3.cloudapp.net's password: 
+	Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
 
-~~~
+	~~~
 
-**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y escribes la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
+	**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y seguidamente deberás escribir la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
 
 
 4. 
@@ -160,7 +160,7 @@ Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
 
 
 
-##Conclusión:
+###Conclusión:
 
 
 
