@@ -237,7 +237,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 		1. Para hacerlo más intuitivo y menos tedioso, lo haremos desde el panel de administración en la web.
 
-			Accedemos a Virtual Machines una vez dentro.
+			Una vez dentro del panel, accedemos a **Virtual Machines** .
 
 			![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
 
