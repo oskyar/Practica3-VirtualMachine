@@ -125,78 +125,78 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 2\. Para acceder mediante ssh debemos recordar el nombre de nuestra VM ó la ip por lo menos, para ello, sin tener que acceder a la web y tener que estar navegando, utilizaremos la siguiente orden
 
-		$ azure vm list
+	$ azure vm list
 
-	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/8.ListaVM.png)
+![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/8.ListaVM.png)
 
-	En el caso de seguir queriendo hacerlo mediante la web, debemos ir a `VIRTUAL MACHINES`
+En el caso de seguir queriendo hacerlo mediante la web, debemos ir a `VIRTUAL MACHINES`
 
-	*Esta imagen es ilustrativa*
-	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
+*Esta imagen es ilustrativa*
+![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
 
 
 3\. Bien, ya sabemos qué máquinas tenemos disponibles, lógicamente solo podremos acceder a una máquina que esté en funcionamiento (en caso contrario mostrará un mensaje de error `connection refused`), yo voy a usar la VM con nombre `app-conf3.cloudapp.net`, así que escribiremos la siguiente orden.
 
-		$ ssh app-conf3.cloudapp.net
+	$ ssh app-conf3.cloudapp.net
 
 
-	~~~
+~~~
 
-	oskyar@oskyar-M60Vp:~/proyectosGit/Practica3-VirtualMachine$ ssh app-conf3.cloudapp.net
-	Warning: the ECDSA host key for 'app-conf3.cloudapp.net' differs from the key for the IP address '137.117.146.38'
-	Offending key for IP in /home/oskyar/.ssh/known_hosts:14
-	Matching host key in /home/oskyar/.ssh/known_hosts:15
-	Are you sure you want to continue connecting (yes/no)? yes
-	oskyar@app-conf3.cloudapp.net's password: 
-	Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
+oskyar@oskyar-M60Vp:~/proyectosGit/Practica3-VirtualMachine$ ssh app-conf3.cloudapp.net
+Warning: the ECDSA host key for 'app-conf3.cloudapp.net' differs from the key for the IP address '137.117.146.38'
+Offending key for IP in /home/oskyar/.ssh/known_hosts:14
+Matching host key in /home/oskyar/.ssh/known_hosts:15
+Are you sure you want to continue connecting (yes/no)? yes
+oskyar@app-conf3.cloudapp.net's password: 
+Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
 
-	~~~
+~~~
 
-	**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y seguidamente deberás escribir la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
+**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y seguidamente deberás escribir la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
 
 
 4\. ¡Ya estamos dentro! Ahora toca configurar nuestro entorno para la aplicación. En mi caso he creado un script para la configuración de todo el entorno. (Son meramente órdenes de la shell pero que ayuda el no tener que repetirlas en cada VM a configurar)
 
-	[Código del script](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/scriptConfiguracion.sh)
+[Código del script](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/scriptConfiguracion.sh)
 
-	* El script me descarga, instala y configura.
+* El script me descarga, instala y configura.
 
-		*JDK 1.7.0_45
+	*JDK 1.7.0_45
 
-		*Maven 3.1.1
+	*Maven 3.1.1
 
-	* Eso sí, habrá que descargarse el script ¿no?. Con estas 3 órdenes hacemos todo.
+* Eso sí, habrá que descargarse el script ¿no?. Con estas 3 órdenes hacemos todo.
 
-			$ wget https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/scriptConfiguracion.sh
-			$ chmod +x scriptConfiguracion.sh
-			$ ./scriptConfiguracion.sh
+		$ wget https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/scriptConfiguracion.sh
+		$ chmod +x scriptConfiguracion.sh
+		$ ./scriptConfiguracion.sh
 
-	**NOTA:** En caso de haber algún error con el script, seguir estos enlaces:
+**NOTA:** En caso de haber algún error con el script, seguir estos enlaces:
 
-	 * [Instalar JDK1.7.0_45](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_java.md#instalamos-el-jdk170-java-depevolpment-kit) (*El paso 6 no hace falta hacerlo, es para jaulas con CHROOT*)
+ * [Instalar JDK1.7.0_45](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_java.md#instalamos-el-jdk170-java-depevolpment-kit) (*El paso 6 no hace falta hacerlo, es para jaulas con CHROOT*)
 
-	 * [Instalar Maven 3.1.1](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_maven.md#instalaci%C3%B3n-de-maven)
+ * [Instalar Maven 3.1.1](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_maven.md#instalaci%C3%B3n-de-maven)
 
 
 5\. Ya tengo las herramientas de desarrollo que necesito para mi entorno operativas, pero me falta el ¡¡código!!, vamos a instalar git.
 
-		$ sudo apt-get install git
+	$ sudo apt-get install git
 
 6\. Y ahora voy a descargar/clonar mi proyecto.
 
-		$ git clone git@github.com:oskyar/Practica3-VirtualMachine.git
+	$ git clone git@github.com:oskyar/Practica3-VirtualMachine.git
 
 7\. Como con mi proyecto ya viene configurado **Spring** (*servidor de aplicaciones*), ahora necesito  **instalar** las dependencias de mi proyecto con **maven** y ya podré ejecutarlo.
 
-		$ mvn install
+	$ mvn install
 
 8\. ¡Vamos a desplegar la aplicación! (**Aclaración**:Supongo que estoy dentro de la carpeta del proyecto)
 
-		$ sudo sh target/bin/webapp
+	$ sudo sh target/bin/webapp
 
 9\. Saldrá algo como en la siguiente captura y si todo sale bien, pondrá al final `INFO  - log                        - Started SelectChannelConnector@0.0.0.0:80`
 
-	![Proyecto desplegado](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/9.DesplegandoAplicacion.png)
+![Proyecto desplegado](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/9.DesplegandoAplicacion.png)
 
 
 10\. Comprobemos que está funcionando, [pinchemos aquí](http://app-conf3.cloudapp.net)
@@ -204,61 +204,61 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 11\. Ya tenemos todo corriendo, ahora solo falta usar un **benchmark** como `ab` para testear la aplicación e intentar sacarle el máximo rendimiento con el mínimo hardware posible.
 	
-	* Cabe recordar que tenemos que hacer comparaciones con el mismo hardware pero diferentes VM instaladas.
+* Cabe recordar que tenemos que hacer comparaciones con el mismo hardware pero diferentes VM instaladas.
 
-	* Las configuraciones son las siguientes (***TODAS EN AZURE***):
+* Las configuraciones son las siguientes (***TODAS EN AZURE***):
 
-		| Configuración | SO 		| Cores 		|	RAM				|Tiempo Total Test(s)  |Solicitudes por Segundo	|Tiempo por solicitud (ms)|Velocidad de Transferencia (KB/s) |
-		| :-----------:	| :------: 	| :-----: 		|:-----:|:---------:|:-------------:	|:------------:			|:------------:|
-		| 	 1   		| Ubuntu 12.04 LTS   | 1 compartido	|768 MB 	|17,82				|82,23 					|17,82|27,37|
-		| 	 2   		| Ubuntu 13.10     	| 1 compartido	|768 MB		|14,42				|89,46					|14,42|29,78|
-		| 	 3   		| CentOS       	| 1 compartido	|768 MB 		|10,48				|97,96					|10,42|32,62|
-		| 	 4   		| Ubuntu 12.04 LTS     	| 1 			|1,75 GB	|9,93			|104,22					|9,93|34,69|
-		| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|7,75			|129,08					|7,75|42,97|
-		| 	 6   		| CentOS     	| 1 			|1,75 GB	|			8,85		|113,51 				|8,85|37,79|
-		| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|9,32		|108,77					|9,32|36,20|
-		| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|11,0_45		|97,09 					|11,04|32,33|
-		| 	 9   		| CentOS       	| 2 			|3,75 GB	|9,29					|110,54 				|9,29|36,79|
+	| Configuración | SO 		| Cores 		|	RAM				|Tiempo Total Test(s)  |Solicitudes por Segundo	|Tiempo por solicitud (ms)|Velocidad de Transferencia (KB/s) |
+	| :-----------:	| :------: 	| :-----: 		|:-----:|:---------:|:-------------:	|:------------:			|:------------:|
+	| 	 1   		| Ubuntu 12.04 LTS   | 1 compartido	|768 MB 	|17,82				|82,23 					|17,82|27,37|
+	| 	 2   		| Ubuntu 13.10     	| 1 compartido	|768 MB		|14,42				|89,46					|14,42|29,78|
+	| 	 3   		| CentOS       	| 1 compartido	|768 MB 		|10,48				|97,96					|10,42|32,62|
+	| 	 4   		| Ubuntu 12.04 LTS     	| 1 			|1,75 GB	|9,93			|104,22					|9,93|34,69|
+	| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|7,75			|129,08					|7,75|42,97|
+	| 	 6   		| CentOS     	| 1 			|1,75 GB	|			8,85		|113,51 				|8,85|37,79|
+	| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|9,32		|108,77					|9,32|36,20|
+	| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|11,0_45		|97,09 					|11,04|32,33|
+	| 	 9   		| CentOS       	| 2 			|3,75 GB	|9,29					|110,54 				|9,29|36,79|
 
 
 
 12\. Me he adelantado poniendo los resultados, pero ahora mismo explico qué instrucción he usado y cómo he cambiado la configuración de las VMs.
 
-	* La orden es la siguiente
+* La orden es la siguiente
 
-			$ ab -n 1000 -c 100 app-conf3.cloudapp.net/
+		$ ab -n 1000 -c 100 app-conf3.cloudapp.net/
 
-		~~~
-		-n: Indica el número de peticiones que se harán (1000)
-		-c: Cuántas peticiones se harán concurrentemente (100)
-		~~~
+	~~~
+	-n: Indica el número de peticiones que se harán (1000)
+	-c: Cuántas peticiones se harán concurrentemente (100)
+	~~~
 
-	* **¿Cómo se cambia la configuración de nuestra VM?**
+* **¿Cómo se cambia la configuración de nuestra VM?**
 
-		1. Para hacerlo más intuitivo y menos tedioso, lo haremos desde el panel de administración en la web.
+	1. Para hacerlo más intuitivo y menos tedioso, lo haremos desde el panel de administración en la web.
 
-			Una vez dentro del panel, accedemos a **Virtual Machines** .
+		Una vez dentro del panel, accedemos a **Virtual Machines** .
 
-			![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
+		![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
 
 
-		2. Pinchamos en el nombre de la VM que queramos cambiar de configuración/recursos y una vez dentro le damos a la opción `configure`.
+	2. Pinchamos en el nombre de la VM que queramos cambiar de configuración/recursos y una vez dentro le damos a la opción `configure`.
 
-			![Cambiando recursos](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/10.CambiandoRecursos.png)
+		![Cambiando recursos](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/10.CambiandoRecursos.png)
 
-		3. Vemos que hay muchos tamaños de VM, pero con la suscripción solo podemos optar por los 3 primeros,
+	3. Vemos que hay muchos tamaños de VM, pero con la suscripción solo podemos optar por los 3 primeros,
 
-			*Extra small *(1 core compartido y 768 MB de RAM)*
+		*Extra small *(1 core compartido y 768 MB de RAM)*
 
-			*Small *(1 Core y 1,75 GB de RAM)*
+		*Small *(1 Core y 1,75 GB de RAM)*
 
-			*Medium *(2 Cores y 3,5 GB de RAM)*
+		*Medium *(2 Cores y 3,5 GB de RAM)*
 
-		4. Si lo modificamos veremos que abajo, a pie de página nos aparecen dos iconos **SAVE** y **DISCARD**, pues, si queremos guardar esa configuración le daremos a **SAVE** y si no, lo descartaremos (DISCARD).
+	4. Si lo modificamos veremos que abajo, a pie de página nos aparecen dos iconos **SAVE** y **DISCARD**, pues, si queremos guardar esa configuración le daremos a **SAVE** y si no, lo descartaremos (DISCARD).
 
-			* Si le damos a SAVE, nos mostrará otro mensaje emergente a pie de página en el que nos indica que la VM se reiniciará. Si no tenemos nada que perder le daremos a `OK`.
+		* Si le damos a SAVE, nos mostrará otro mensaje emergente a pie de página en el que nos indica que la VM se reiniciará. Si no tenemos nada que perder le daremos a `OK`.
 
-		5. Una vez cambiada la configuración se procede a pasar el benchmark de nuevo. Así sucesivamente con todas las máquinas virtuales desde 1 core compartido hasta 2 cores.
+	5. Una vez cambiada la configuración se procede a pasar el benchmark de nuevo. Así sucesivamente con todas las máquinas virtuales desde 1 core compartido hasta 2 cores.
 
 
 #### Comparaciones gráficas de las configuraciones.
