@@ -35,12 +35,20 @@ Pasos a seguir:
 
 
 
-### Máquina virtual 1. Ubuntu 12.04 LTS
+### Máquina virtual 1. Ubuntu 12.04 LTS + Spring (Servidor de aplicaciones)
 
 1. Empezaremos creando la máquina virtual desde la página de Azure ya que es más atractivo.
 
-	Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
-	
+	1. Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
+
+	![Captura de la página inicial]()
+
+	2. Ahora accedemos a crear la VM (Virtual Machine de ahora en adelante) desde la Galería (`**FROM GALERY**`) que es más cómodo y fácil.
+	**NOTA:** También que al tener una cuenta de suscripción gratuita solo podemos crear un almacenamiento de objetos, por lo que nos conviene hacerlo desde la galería porque nos permite usar el mismo almacenamiento en caso de haber creado alguno ya.
+
+	![Accediendo a la galería]()
+
+
 
 ### INSTALAR SIENDO SUPERUSUARIO DEL SISTEMA (Fuera de la jaula)
 

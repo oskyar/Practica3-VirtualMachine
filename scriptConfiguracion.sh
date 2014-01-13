@@ -54,23 +54,12 @@ export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
 export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 export JAVA_HOME=/usr/lib/jvm/jdk1.7.0
-export PATH=$JAVA_HOME/bin:$M2:$PATH_BACKUP
+export PATH=$JAVA_HOME/bin:$M2:$PATH
 
 
 echo "[Comprobación de que la configuración es correcta]"
 mvn --version
 
-
-echo " -------------------------------------"
-echo " -------------------------------------"
-
-echo " Instalación Servidor de Aplicaciones Jboss 7.1.0 Final "
-
-echo "[Descargando Jboss]"
-wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.0.Final/jboss-as-7.1.0.Final.tar.gz
-
-echo "[Descomprimiendo]"
-tar -xvf jboss-as-7.1.0.Final.tar.gz
 
 echo "[Borrando todos los *.tar.gz]"
 rm *.tar.gz
