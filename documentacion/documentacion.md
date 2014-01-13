@@ -217,7 +217,7 @@ Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
 	| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|7,75			|129,08					|7,75|42,97|
 	| 	 6   		| CentOS     	| 1 			|1,75 GB	|			8,85		|113,51 				|8,85|37,79|
 	| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|9,32		|108,77					|9,32|36,20|
-	| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|11,0_45		|97,09 					|11,04|32,33|
+	| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|11,045		|97,09 					|11,04|32,33|
 	| 	 9   		| CentOS       	| 2 			|3,75 GB	|9,29					|110,54 				|9,29|36,79|
 
 
@@ -248,15 +248,16 @@ Last login: Mon Jan 13 02:28:49 2014 from 89.140.178.72.static.user.ono.com
 
 	3. Vemos que hay muchos tamaños de VM, pero con la suscripción solo podemos optar por los 3 primeros,
 
-		*Extra small *(1 core compartido y 768 MB de RAM)*
+		* Extra small *(1 core compartido y 768 MB de RAM)*
 
-		*Small *(1 Core y 1,75 GB de RAM)*
+		* Small *(1 Core y 1,75 GB de RAM)*
 
-		*Medium *(2 Cores y 3,5 GB de RAM)*
+		* Medium *(2 Cores y 3,5 GB de RAM)*
 
 	4. Si lo modificamos veremos que abajo, a pie de página nos aparecen dos iconos **SAVE** y **DISCARD**, pues, si queremos guardar esa configuración le daremos a **SAVE** y si no, lo descartaremos (DISCARD).
 
 		* Si le damos a SAVE, nos mostrará otro mensaje emergente a pie de página en el que nos indica que la VM se reiniciará. Si no tenemos nada que perder le daremos a `OK`.
+
 
 	5. Una vez cambiada la configuración se procede a pasar el benchmark de nuevo. Así sucesivamente con todas las máquinas virtuales desde 1 core compartido hasta 2 cores.
 
