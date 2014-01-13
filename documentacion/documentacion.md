@@ -16,7 +16,7 @@
 
 # Práctica 3: Diseño de máquinas virtuales
 
-### Descripción
+## Descripción
 
 La práctica consiste en diseñar una máquina virtual para una aplicación específica la cual debe de usar los mínimos recursos del sistema para que la aplicación sea lo más óptima posible, es decir, que los recursos no se queden cortos ni que tampoco se "desperdicien".
 
@@ -39,11 +39,11 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 -------------
 
-### Empieza lo bueno:
+## Empieza lo bueno:
 
-#### Máquina virtual 1: Ubuntu 12.04 LTS + Spring (Servidor de aplicaciones)
+### Máquina virtual 1: Ubuntu 12.04 LTS + Spring (Servidor de aplicaciones)
 
-#####1. Empezaremos creando la máquina virtual desde la página de Azure ya que es más atractivo e intuitivo.
+####1. Empezaremos creando la máquina virtual desde la página de Azure ya que es más atractivo e intuitivo.
 
 1. Tan solo tenemos acceder a nuestra página una vez suscritos. Pinchar a la izquierda en `**Virtual Machines**` y hacer click en la esquina inferior izquierda en `**NEW**`
 
@@ -102,14 +102,14 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	![Puntos Finales](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/6.ConfigurandoPuntosFinales.png)
 
-	**¿Ésto que quiere decir?** - Que nos abre directamente los puertos a nuestra VM que vayamos a necesitar, ni más ni menos. Teniendo así bien capada nuestra VM en caso de seres intrusivos.
+	**¿Esto que quiere decir?** - Que nos abre directamente los puertos a nuestra VM que vayamos a necesitar, ni más ni menos. Teniendo así bien capada nuestra VM en caso de haber seres intrusivos.
 
-	Hay gran variedad de "**EndPoints**" por defecto configurados en el que sÓlo deberemos de pinchar en el que queramos añadir.
+	Hay gran variedad de "**EndPoints**" por defecto configurados. Para añadir alguno tan fácil como seleccionar el que más nos convenga.
 
 7. C'est Fini!
 
 
-#####2. ¡¡Eh, que ya tengo una VM creada!! ¿¡Cómo entro!?
+####2. ¡¡Eh, que ya tengo una VM creada!! ¿¡Cómo entro!?
 
 * Se puede acceder de muchísimas formas, pero como ya hemos hecho demasiados clicks, toca escribir un poquito y acceder mediante nuestro terminal. Sigamos los siguientes pasos y veremos que sencillo es:
 
@@ -119,7 +119,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 		$ ssh
 
-	* En de no tenerlo instalado
+	* Si nos sale un mensaje de error que no encuentra el ejecutable, no pasa nada, escribid lo siguiente e instalar las dependencias necesarias.
 
 		$ sudo apt-get install ssh
 
@@ -127,15 +127,15 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	$ azure vm list
 
-![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/8.ListaVM.png)
+	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/8.ListaVM.png)
 
-En el caso de seguir queriendo hacerlo mediante la web, debemos ir a `VIRTUAL MACHINES`
+	En el caso de seguir queriendo hacerlo mediante la web, debemos ir a `VIRTUAL MACHINES`
 
-Esta imagen es ilustrativa.
-![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
+	*Esta imagen es ilustrativa*
+	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
 
 
-3. Bien, ya sabemos qué máquinas tenemos disponibles, lógicamente solo podremos acceder a una máquina que esté en funcionamiento (en caso contrario mostrará un mensaje de error `connection refused`), por lo que lo haremos a la máquina con el nombre `app-conf3.cloudapp.net`, así que escribiremos la siguiente orden.
+3. Bien, ya sabemos qué máquinas tenemos disponibles, lógicamente solo podremos acceder a una máquina que esté en funcionamiento (en caso contrario mostrará un mensaje de error `connection refused`), yo voy a usar la VM con nombre `app-conf3.cloudapp.net`, así que escribiremos la siguiente orden.
 
 		$ ssh app-conf3.cloudapp.net
 
@@ -155,12 +155,50 @@ Esta imagen es ilustrativa.
 	**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y seguidamente deberás escribir la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
 
 
-4. 
+4. ¡Ya estamos dentro! Ahora toca configurar nuestro entorno para la aplicación. En mi caso he creado un script para la configuración de todo el entorno. (Son meramente órdenes de la shell pero que ayuda el no tener que repetirlas en cada VM a configurar)
+
+	[Código del script](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/scriptConfiguracion.sh)
+
+	*El script me descarga, instala y configura.
+
+		*JDK 1.7.0_45
+
+		*Maven 3.1.1
+
+	* Eso sí, habrá que descargarse el script ¿no?. Con estas 3 órdenes hacemos todo.
+
+			$ wget https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/scriptConfiguracion.sh
+			$ chmod +x scriptConfiguracion.sh
+			$ ./scriptConfiguracion.sh
+
+	**NOTA:** En caso de haber algún error con el script, seguir estos enlaces:
+
+	 * [Instalar JDK1.7.0_45](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_java.md#instalamos-el-jdk170-java-depevolpment-kit) (*El paso 6 no hace falta hacerlo, es para jaulas con CHROOT*)
+
+	 * [Instalar Maven 3.1.1](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_maven.md#instalaci%C3%B3n-de-maven)
 
 
+5. Ya tengo las herramientas de desarrollo que necesito para mi entorno operativas, pero me falta el ¡¡código!!, vamos a instalar git.
 
+		$ sudo apt-get install git
 
-###Conclusión:
+6. Y ahora voy a descargar/clonar mi proyecto.
+
+		$ git clone git@github.com:oskyar/Practica3-VirtualMachine.git
+
+7. Como con mi proyecto ya viene configurado **Spring** (*servidor de aplicaciones*), ahora necesito  **instalar** las dependencias de mi proyecto con **maven** y ya podré ejecutarlo.
+
+		$ mvn install
+
+8. ¡Vamos a desplegar la aplicación! (**Aclaración**:Supongo que estoy dentro de la carpeta del proyecto)
+
+		$ sudo sh target/bin/webapp
+
+9. Saldrá algo como en la siguiente captura y si todo sale bien, pondrá al final `INFO  - log                        - Started SelectChannelConnector@0.0.0.0:80`
+
+	![Proyecto desplegado](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/9.DesplegandoAplicacion.png)
+
+##Conclusión:
 
 
 
