@@ -208,17 +208,18 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 	* Las configuraciones son las siguientes (***TODAS EN AZURE***):
 
-		| Configuración | SO 		| Cores 		|	RAM	|
-		| :-----------:	| :------: 	| :-----: 		|:-----:|
-		| 	 1   		| Ubuntu 12.04 LTS       	| 1 compartido	|768 MB 	|
-		| 	 2   		| Ubuntu 13.10     	| 1 compartido	|768 MB	|
-		| 	 3   		| CentOS       	| 1 compartido	|768 MB 	|
-		| 	 4   		| Ubuntu 12.04 LTS     	| 1 			|1,75 GB	|
-		| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|
-		| 	 6   		| CentOS     	| 1 			|1,75 GB	|				
-		| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|
-		| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|
-		| 	 9   		| CentOS       	| 2 			|3,75 GB	|
+		| Configuración | SO 		| Cores 		|	RAM				|Tiempo Total Test(s)  |Solicitudes por Segundo	|Tiempo por solicitud (ms)|Velocidad de Transferencia (KB/s) |
+		| :-----------:	| :------: 	| :-----: 		|:-----:|:---------:|:-------------:	|:------------:			|:------------:|
+		| 	 1   		| Ubuntu 12.04 LTS   | 1 compartido	|768 MB 	|17,82				|82,23 					|17,82|27,37|
+		| 	 2   		| Ubuntu 13.10     	| 1 compartido	|768 MB		|14,42				|89,46					|14,42|29,78|
+		| 	 3   		| CentOS       	| 1 compartido	|768 MB 		|10,48				|97,96					|10,42|32,62|
+		| 	 4   		| Ubuntu 12.04 LTS     	| 1 			|1,75 GB	|9,93			|104,22					|9,93|34,69|
+		| 	 5   		| Ubuntu 13.10        	| 1 			|1,75 GB	|7,75			|129,08					|7,75|42,97|
+		| 	 6   		| CentOS     	| 1 			|1,75 GB	|			8,85		|113,51 				|8,85|37,79|
+		| 	 7   		| Ubuntu 12.04 LTS       	| 2				|3,75 GB 	|9,32		|108,77					|9,32|36,20|
+		| 	 8   		| Ubuntu 13.10      	| 2 			|3,75 GB	|11,0_45		|97,09 					|11,04|32,33|
+		| 	 9   		| CentOS       	| 2 			|3,75 GB	|9,29					|110,54 				|9,29|36,79|
+
 
 
 ##Conclusión:
