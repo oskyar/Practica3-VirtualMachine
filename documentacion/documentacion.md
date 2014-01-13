@@ -123,7 +123,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 			$ sudo apt-get install ssh
 
-2. Para acceder mediante ssh debemos recordar el nombre de nuestra VM ó la ip por lo menos, para ello, sin tener que acceder a la web y tener que estar navegando, utilizaremos la siguiente orden
+2\. Para acceder mediante ssh debemos recordar el nombre de nuestra VM ó la ip por lo menos, para ello, sin tener que acceder a la web y tener que estar navegando, utilizaremos la siguiente orden
 
 		$ azure vm list
 
@@ -135,7 +135,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 	![Lista de VM](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/7.ListaMaquinasVirtuales.png)
 
 
-3. Bien, ya sabemos qué máquinas tenemos disponibles, lógicamente solo podremos acceder a una máquina que esté en funcionamiento (en caso contrario mostrará un mensaje de error `connection refused`), yo voy a usar la VM con nombre `app-conf3.cloudapp.net`, así que escribiremos la siguiente orden.
+3\. Bien, ya sabemos qué máquinas tenemos disponibles, lógicamente solo podremos acceder a una máquina que esté en funcionamiento (en caso contrario mostrará un mensaje de error `connection refused`), yo voy a usar la VM con nombre `app-conf3.cloudapp.net`, así que escribiremos la siguiente orden.
 
 		$ ssh app-conf3.cloudapp.net
 
@@ -155,7 +155,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 	**NOTA:** Si es la primera vez que entras, te sale un mensaje como el anterior y no configuraste el certificado **SSH**; escribe `yes` y seguidamente deberás escribir la **contraseña** en caso de haberla establecido al crear la VM para poder acceder a la VM.
 
 
-4. ¡Ya estamos dentro! Ahora toca configurar nuestro entorno para la aplicación. En mi caso he creado un script para la configuración de todo el entorno. (Son meramente órdenes de la shell pero que ayuda el no tener que repetirlas en cada VM a configurar)
+4\. ¡Ya estamos dentro! Ahora toca configurar nuestro entorno para la aplicación. En mi caso he creado un script para la configuración de todo el entorno. (Son meramente órdenes de la shell pero que ayuda el no tener que repetirlas en cada VM a configurar)
 
 	[Código del script](https://github.com/oskyar/Practica3-VirtualMachine/blob/master/scriptConfiguracion.sh)
 
@@ -178,31 +178,31 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 	 * [Instalar Maven 3.1.1](https://github.com/oskyar/Practica2-Jaula-CHROOT/blob/master/documentacion/instalacion_maven.md#instalaci%C3%B3n-de-maven)
 
 
-5. Ya tengo las herramientas de desarrollo que necesito para mi entorno operativas, pero me falta el ¡¡código!!, vamos a instalar git.
+5\. Ya tengo las herramientas de desarrollo que necesito para mi entorno operativas, pero me falta el ¡¡código!!, vamos a instalar git.
 
 		$ sudo apt-get install git
 
-6. Y ahora voy a descargar/clonar mi proyecto.
+6\. Y ahora voy a descargar/clonar mi proyecto.
 
 		$ git clone git@github.com:oskyar/Practica3-VirtualMachine.git
 
-7. Como con mi proyecto ya viene configurado **Spring** (*servidor de aplicaciones*), ahora necesito  **instalar** las dependencias de mi proyecto con **maven** y ya podré ejecutarlo.
+7\. Como con mi proyecto ya viene configurado **Spring** (*servidor de aplicaciones*), ahora necesito  **instalar** las dependencias de mi proyecto con **maven** y ya podré ejecutarlo.
 
 		$ mvn install
 
-8. ¡Vamos a desplegar la aplicación! (**Aclaración**:Supongo que estoy dentro de la carpeta del proyecto)
+8\. ¡Vamos a desplegar la aplicación! (**Aclaración**:Supongo que estoy dentro de la carpeta del proyecto)
 
 		$ sudo sh target/bin/webapp
 
-9. Saldrá algo como en la siguiente captura y si todo sale bien, pondrá al final `INFO  - log                        - Started SelectChannelConnector@0.0.0.0:80`
+9\. Saldrá algo como en la siguiente captura y si todo sale bien, pondrá al final `INFO  - log                        - Started SelectChannelConnector@0.0.0.0:80`
 
 	![Proyecto desplegado](https://raw2.github.com/oskyar/Practica3-VirtualMachine/master/documentacion/img/9.DesplegandoAplicacion.png)
 
 
-10. Comprobemos que está funcionando, [pinchemos aquí](http://app-conf3.cloudapp.net)
+10\. Comprobemos que está funcionando, [pinchemos aquí](http://app-conf3.cloudapp.net)
 
 
-11. Ya tenemos todo corriendo, ahora solo falta usar un **benchmark** como `ab` para testear la aplicación e intentar sacarle el máximo rendimiento con el mínimo hardware posible.
+11\. Ya tenemos todo corriendo, ahora solo falta usar un **benchmark** como `ab` para testear la aplicación e intentar sacarle el máximo rendimiento con el mínimo hardware posible.
 	
 	* Cabe recordar que tenemos que hacer comparaciones con el mismo hardware pero diferentes VM instaladas.
 
@@ -222,7 +222,7 @@ Voy a crear 3 máquinas virtuales con los siguientes sistemas operativos:
 
 
 
-12. Me he adelantado poniendo los resultados, pero ahora mismo explico qué orden he usado y cómo he cambiado la configuración de las VMs.
+12\. Me he adelantado poniendo los resultados, pero ahora mismo explico qué instrucción he usado y cómo he cambiado la configuración de las VMs.
 
 	* La orden es la siguiente
 
